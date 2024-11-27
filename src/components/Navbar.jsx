@@ -4,8 +4,8 @@ export default function Navbar() {
   return (
     <div className="flex justify-center items-center gap-4 py-8 border-b-2">
       <Link to={"/"}>Home</Link>
-      <Link to={"/coffeestore"}>Coffee Store</Link>
-      <Link to={"/updatecoffee"}>Update Coffee</Link>
+      <Link to={"/coffees"}>Coffees</Link>
+      <Link to={"/updatecoffee"}>UpLoade Coffee</Link>
     </div>
   );
 }
