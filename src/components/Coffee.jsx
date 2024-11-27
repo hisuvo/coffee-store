@@ -3,7 +3,7 @@ import { MdDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-export default function Coffee({ coffee }) {
+export default function Coffee({ coffee, coffees, setCoffees }) {
   const { _id } = coffee;
   const handleDelete = (_id) => {
     Swal.fire({
@@ -28,6 +28,8 @@ export default function Coffee({ coffee }) {
                 text: "Your coffee has been deleted.",
                 icon: "success",
               });
+              const remining = coffees.filter((coffee) => coffee._id !== _id);
+              setCoffees(remining);
             }
           });
       }
@@ -43,9 +45,12 @@ export default function Coffee({ coffee }) {
         <p>Description: {coffee.details}</p>
       </div>
       <div className="col-span-2 flex flex-col justify-center items-center">
-        <button className="btn btn-md bg-[#D2B48C] text-white text-lg">
+        <Link
+          to={`/details/${_id}`}
+          className="btn btn-md bg-[#D2B48C] text-white text-lg"
+        >
           <FaEye />
-        </button>
+        </Link>
         <Link
           to={`/coffeestore/${_id}`}
           className="btn btn-md bg-[#3C393B] text-white text-lg"

@@ -1,4 +1,5 @@
 import Swal from "sweetalert2";
+
 export default function UpdateCoffee() {
   const handleUpdateCoffee = (e) => {
     e.preventDefault();
@@ -43,6 +44,7 @@ export default function UpdateCoffee() {
         }
       });
   };
+
   return (
     <div>
       <div className="card md:justify-center md:items-center bg-base-100 w-full shrink-0 ">

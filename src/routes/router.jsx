@@ -5,6 +5,7 @@ import Errorpage from "../components/Errorpage";
 import CofffeStore from "../components/CofffeStore";
 import UpdateCoffee from "../components/UpdateCoffee";
 import Coffees from "../components/Coffees";
+import DetailsPage from "../components/DetailsPage";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,12 @@ const router = createBrowserRouter([
       {
         path: "/updatecoffee",
         element: <UpdateCoffee />,
+      },
+      {
+        path: "/details/:id",
+        element: <DetailsPage />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/coffee/${params.id}`),
       },
     ],
   },
